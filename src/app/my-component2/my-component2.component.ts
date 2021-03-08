@@ -8,12 +8,21 @@ import { Component, OnInit } from '@angular/core';
 export class MyComponent2 implements OnInit {
 
   constructor() { }
+  myClass:string='rounded mx-auto d-block'
+  url:string=''
   name2: string="Gena"
   name: string="My String"
   names = ['Ari', 'Carlos', 'Felipe', 'Nate'];
   localLastName:string="My last name"
 
   ngOnInit(): void {
+    this.showImage()
+  }
+
+  showImage(){
+    setTimeout(() => {
+      this.url='https://picsum.photos/200/300'
+    }, 3000);
   }
 
   deleteItem(index:number){

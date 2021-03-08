@@ -1,6 +1,10 @@
 <p>my-component works!2222222</p>
 {{name}}
 
+
+
+<img *ngIf="url!=''" src="{{url}}" style="height: 300px;width: 300px;" class="{{myClass}}" >
+
 <table class="table table-striped">
     <thead>
       <tr>
@@ -11,14 +15,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let name of names;let i = index">
-          <app-table-row
-          (onNewDelItem)="deleteItem($event)"
-          [index]="i"
-          [name]="name" 
-          [lastName]="localLastName"></app-table-row>
+      <tr  *ngFor="let name of names;let i = index"  app-table-row
+      (onNewDelItem)="deleteItem($event)"
+      [index]="i"
+      [name]="name" 
+      [lastName]="localLastName">
+
       </tr>
       
 
     </tbody>
   </table>
+
+ 

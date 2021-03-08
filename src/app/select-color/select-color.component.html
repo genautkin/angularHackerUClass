@@ -1,0 +1,33 @@
+<div [ngClass]="{bordered: fontSize>15 ? true : false }">This is never bordered</div>
+
+
+<div class="ui input">
+
+    <input type="text" name="color" value="{{color}}" #colorinput>
+    
+    </div>
+    <div class="ui input">
+    
+    <input type="text" name="fontSize" value="{{fontSize}}" #fontinput>
+    
+    </div>
+    <button class="ui primary button" (click)="apply(colorinput.value, fontinput.value)">
+    
+    Apply settings
+    </button>
+
+    <div>
+        <span [ngStyle]="{color: color}" [style.font-size.px]="fontSize">
+        
+        {{ color }} text
+        </span>
+        </div>
+        <h4 class="ui horizontal divider header">
+        
+        style from variable
+        </h4>
+        <div [style.background-color]="color"
+        
+        style="color: white;">
+        {{ color }} background
+        </div>

@@ -7,6 +7,8 @@ import { TableRowComponent } from './table-row/table-row.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormComponent } from './form/form.component';
 import { FormSubscribeComponent } from './form-subscribe/form-subscribe.component';
+import { SelectColorComponent } from './select-color/select-color.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,11 +19,13 @@ import { FormSubscribeComponent } from './form-subscribe/form-subscribe.componen
     MyComponent2,
     TableRowComponent,
     FormComponent,
-    FormSubscribeComponent
+    FormSubscribeComponent,
+    SelectColorComponent
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
