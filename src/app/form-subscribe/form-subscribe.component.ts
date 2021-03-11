@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { AfterContentChecked, AfterContentInit, AfterViewInit, Component, DoCheck, ElementRef, Input, OnChanges, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import {Subscribe} from '../classes/subscribe'
 
@@ -8,7 +9,7 @@ import {Subscribe} from '../classes/subscribe'
 })
 export class FormSubscribeComponent implements OnInit,AfterViewInit,OnDestroy,AfterContentInit,AfterContentChecked {
 
-  constructor() {
+  constructor(private http: HttpClient) {
     console.log(this.test)
    }
   ngAfterContentChecked(): void {
@@ -45,6 +46,7 @@ export class FormSubscribeComponent implements OnInit,AfterViewInit,OnDestroy,Af
   ngOnInit(): void {
     console.log(this.test)
     console.log(this.email)
+    
     
   //  this.email.nativeElement.value='test'
 

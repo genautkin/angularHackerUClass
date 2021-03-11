@@ -9,6 +9,8 @@ import { FormComponent } from './form/form.component';
 import { FormSubscribeComponent } from './form-subscribe/form-subscribe.component';
 import { SelectColorComponent } from './select-color/select-color.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MainAlbumComponent } from './showAlbum/main-album/main-album.component';
 
 
 
@@ -20,12 +22,14 @@ import { FormsModule } from '@angular/forms';
     TableRowComponent,
     FormComponent,
     FormSubscribeComponent,
-    SelectColorComponent
+    SelectColorComponent,
+    MainAlbumComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -35,9 +35,9 @@
       <div class="container"  [ngSwitch]="menu">
       
 
-  <app-my-component  *ngSwitchCase="0"></app-my-component>
+  <app-main-album *ngSwitchCase="0"></app-main-album>
   <app-my-component2 *ngSwitchCase="1"></app-my-component2>
   <app-form *ngSwitchCase="2"></app-form>
-  <app-form-subscribe *ngSwitchCase="3"></app-form-subscribe>
+  <app-form-subscribe *ngSwitchCase="3" [test]="test"></app-form-subscribe>
   <app-select-color *ngSwitchCase=""></app-select-color>
 </div>
