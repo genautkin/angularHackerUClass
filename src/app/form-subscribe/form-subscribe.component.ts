@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewInit, Component, DoCheck, ElementRef, Input, OnChanges, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import {Subscribe} from '../classes/subscribe'
 
 @Component({
@@ -6,20 +6,51 @@ import {Subscribe} from '../classes/subscribe'
   templateUrl: './form-subscribe.component.html',
   styleUrls: ['./form-subscribe.component.css']
 })
-export class FormSubscribeComponent implements OnInit,AfterViewInit {
+export class FormSubscribeComponent implements OnInit,AfterViewInit,OnDestroy,AfterContentInit,AfterContentChecked {
 
-  constructor() { }
-  ngAfterViewInit(): void {
-    // this.email.nativeElement.value='test'
+  constructor() {
+    console.log(this.test)
+   }
+  ngAfterContentChecked(): void {
+    console.log("ngAfterContentChecked")
   }
+  ngAfterContentInit(): void {
+    console.log("ngAfterContentInit")
+    console.log(this.email)
+  }
+  ngOnDestroy(): void {
+   console.log("ngOnDestroy")
+  }
+  // ngDoCheck(): void {
+  //  console.log("ngDoCheck")
+  // }
+
+  //  ngOnChanges(){
+  //   console.log(`ngOnChanges - data is ${this.test}`);
+  //  }
+
+  ngAfterViewInit(): void {
+    console.log(this.email)
+    this.email.nativeElement.value=this.test
+  }
+
+
+
   user:Subscribe
+
+  @Input() test='Start'
 
   @ViewChild('email') email: ElementRef;
 
   ngOnInit(): void {
-    console.log(this.user)
+    console.log(this.test)
+    console.log(this.email)
+    
+  //  this.email.nativeElement.value='test'
 
   }
+
+ 
 
   a={a:'sdsdd'};
 
