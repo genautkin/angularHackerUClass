@@ -14,6 +14,10 @@ import { MainAlbumComponent } from './showAlbum/main-album/main-album.component'
 import { SetcolorComponent } from './setcolor/setcolor.component';
 import { ShowcolorComponent } from './showcolor/showcolor.component';
 import { routing } from './routing';
+import { NavBarComponent } from './mainComponents/nav-bar/nav-bar.component';
+import { Page404Component } from './mainComponents/page404/page404.component';
+import { LoginComponent } from './mainComponents/login/login.component';
+import { IfUserLogin } from './guards/ifUserLogin';
 
 
 
@@ -28,7 +32,10 @@ import { routing } from './routing';
     SelectColorComponent,
     MainAlbumComponent,
     SetcolorComponent,
-    ShowcolorComponent
+    ShowcolorComponent,
+    NavBarComponent,
+    Page404Component,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +44,7 @@ import { routing } from './routing';
     HttpClientModule,
     routing
   ],
-  providers: [],
+  providers: [IfUserLogin],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

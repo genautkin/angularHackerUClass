@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ColorService } from '../services/color.service';
 
 @Component({
@@ -8,15 +9,21 @@ import { ColorService } from '../services/color.service';
 })
 export class ShowcolorComponent implements OnInit {
 
-  constructor(private cs:ColorService) { }
+  constructor(private cs:ColorService,private _activatedRoute:ActivatedRoute) { }
 
   color: string='red'
 
   ngOnInit(): void {
     // this.color=this.cs.getColor()
     // this.refreshColor()
-    this.cs.colorStatus.subscribe((color)=>{
-      this.color=color;
+    // this.cs.colorStatus.subscribe((color)=>{
+    //   this.color=color;
+    // })
+    this._activatedRoute.params.subscribe(parameter => {
+      console.log(parameter.colorName)
+      if (parameter.colorName){
+        this.color=parameter.colorName
+      }
     })
   }
 

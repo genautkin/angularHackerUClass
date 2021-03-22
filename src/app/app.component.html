@@ -1,59 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item ">
-        <a class="nav-link" routerLink="/home" routerLinkActive="active" >Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="showComp(1)" >Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="showComp(2)" >Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link " (click)="showComp(3)">Disabled</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link " routerLink="/selectColor" routerLinkActive="active">Set color</a>
-      </li> 
 
-      <li class="nav-item">
-        <a class="nav-link " (click)="showComp(5)">Show color</a>
-      </li> 
+<app-nav-bar ></app-nav-bar>
+      <div class="container" >
+       <router-outlet></router-outlet>
 
-    </ul>
-  </div>
-</nav>
-<!-- <div class="container">
-  
-
-  <app-my-component *ngIf="menu===0"></app-my-component>
-  <app-my-component2 *ngIf="menu===1"></app-my-component2>
-  <app-form *ngIf="menu===2"></app-form>
-  <app-form-subscribe *ngIf="menu===3"></app-form-subscribe>
-</div> -->
-
-<!-- <div class="container" [style.background-color]="bc" [ngSwitch]="menu"> -->
-  <!-- <div class="container" style="background-color: yellow;" [ngSwitch]="menu"> -->
-    <!-- <div class="container" [ngStyle]="{ 'background-color': menu>1  ? 'black' : 'yellow'}"  [ngSwitch]="menu"> -->
-      <div class="container"  [ngSwitch]="menu">
-        <router-outlet></router-outlet>
-
-  <!-- <app-main-album *ngSwitchCase="0"></app-main-album>
-  <app-my-component2 *ngSwitchCase="1"></app-my-component2>
-  <app-form *ngSwitchCase="2"></app-form>
-  <app-form-subscribe *ngSwitchCase="3" [test]="test"></app-form-subscribe>
-  <app-select-color *ngSwitchCase=""></app-select-color>
-  <div *ngSwitchCase="4" >
-      <app-setcolor></app-setcolor>
-      <app-showcolor></app-showcolor>
-  </div> -->
-  <!-- <div *ngSwitchCase="5" >
-
-    <app-showcolor></app-showcolor>
-</div> -->
 </div>
