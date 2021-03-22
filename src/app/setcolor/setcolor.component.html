@@ -1,0 +1,14 @@
+<div>
+<div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-primary">-</button>
+    <button type="button" class="btn btn-primary">+</button>
+  </div>
+</div>
+
+<div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Enter color name" aria-label="Recipient's username" aria-describedby="basic-addon2" #color>
+    <div class="input-group-append">
+      <button (click)="save(color.value)" class="btn btn-outline-secondary" type="button">Save</button>
+    </div>
+  </div>
+  <app-showcolor></app-showcolor>

@@ -11,6 +11,9 @@ import { SelectColorComponent } from './select-color/select-color.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MainAlbumComponent } from './showAlbum/main-album/main-album.component';
+import { SetcolorComponent } from './setcolor/setcolor.component';
+import { ShowcolorComponent } from './showcolor/showcolor.component';
+import { routing } from './routing';
 
 
 
@@ -23,13 +26,16 @@ import { MainAlbumComponent } from './showAlbum/main-album/main-album.component'
     FormComponent,
     FormSubscribeComponent,
     SelectColorComponent,
-    MainAlbumComponent
+    MainAlbumComponent,
+    SetcolorComponent,
+    ShowcolorComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]

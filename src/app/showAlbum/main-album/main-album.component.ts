@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { PhotosService } from 'src/app/services/photos-service.service';
 
 @Component({
@@ -7,10 +7,13 @@ import { PhotosService } from 'src/app/services/photos-service.service';
   templateUrl: './main-album.component.html',
   styleUrls: ['./main-album.component.css']
 })
-export class MainAlbumComponent implements OnInit {
+export class MainAlbumComponent implements OnInit,OnDestroy {
 
   constructor(public http: HttpClient,private myService:PhotosService) { 
    
+  }
+  ngOnDestroy(): void {
+    
   }
 
   photos=[]
@@ -25,7 +28,7 @@ export class MainAlbumComponent implements OnInit {
         console.log(val)
       })
 
-      // this.getPhotos([1,5,10,20,30,44])
+       this.getPhotos([1,5,10,20,30,44])
 
   }
 
